@@ -10,27 +10,29 @@
    DESIGN SYSTEM
 ═══════════════════════════════════════════ */
 :root {
-  --bg:        #BBF1D2;
-  --bg2:       #A6E8C1;
-  --surface:   #EEF8CD;
-  --box-bg:    #EEF8CD;
-  --border:    rgba(50, 30, 72, 0.14);
-  --border-h:  rgba(255, 97, 248, 0.7);
-  --accent:    #FF61F8;
-  --accent-dim: rgba(255, 97, 248, 0.22);
-  --accent-glow: rgba(255, 97, 248, 0.45);
-  --white:     #321E48;
-  --muted:     #543970;
-  --muted2:    rgba(50, 30, 72, 0.25);
-  --r:         14px;
-  --r-sm:      8px;
-  --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+  --bg:          #161E2F;  /* Deep dark slate blue */
+  --bg2:         #242F49;  /* Secondary background / card surfaces */
+  --surface:     #242F49;  /* Card surface background */
+  --box-bg:      #242F49;  /* Info box background */
+  --border:      rgba(56, 67, 88, 0.4);  /* Muted steel blue (#384358) */
+  --border-h:    #FFA586;  /* Peach accent highlight */
+  --accent:      #FFA586;  /* Primary Accent: Peach / Apricot */
+  --accent-dim:  rgba(255, 165, 134, 0.15);
+  --accent-glow: rgba(255, 165, 134, 0.4);
+  --accent-sec:  #B51A2B;  /* Secondary Accent: Crimson Red */
+  --accent-plum: #541A2E;  /* Ambient Highlight: Deep Plum */
+  --white:       #FFFFFF;  /* Light/pure white text */
+  --muted:       #B3C0D6;  /* Muted light slate blue text */
+  --muted2:      rgba(179, 192, 214, 0.2);
+  --r:           14px;
+  --r-sm:        8px;
+  --transition:  0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; font-size:18px; }
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at 10% 10%, var(--accent-plum) 0%, transparent 60%), radial-gradient(circle at 90% 80%, rgba(181, 26, 43, 0.08) 0%, transparent 50%), var(--bg);
   color: var(--white);
   font-family: 'Outfit', system-ui, sans-serif;
   font-weight: 400;
@@ -60,8 +62,8 @@ body::before {
 .grid-bg {
   position: fixed; inset:0; z-index:0; pointer-events:none;
   background-image:
-    linear-gradient(rgba(50,30,72,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(50,30,72,0.04) 1px, transparent 1px);
+    linear-gradient(rgba(179,192,214,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(179,192,214,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -76,7 +78,7 @@ body::before {
 .cursor-ripple {
   position: fixed; border-radius:50%; pointer-events:none; z-index:9998;
   width:0; height:0;
-  border: 1.5px solid rgba(255,157,157,0.6);
+  border: 1.5px solid var(--accent);
   transform: translate(-50%,-50%);
   animation: rippleOut 0.5s ease-out forwards;
 }
@@ -99,7 +101,7 @@ nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   display: flex; align-items:center; justify-content:space-between;
   padding: 1.1rem 3rem;
-  background: rgba(187,241,210,0.88);
+  background: rgba(22, 30, 47, 0.88);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
 }
@@ -126,7 +128,7 @@ nav {
   transition: background var(--transition), border-color var(--transition);
 }
 .nav-dl:hover {
-  background: rgba(255,157,157,0.3);
+  background: var(--accent-dim);
   border-color: var(--accent);
 }
 @media(max-width:700px){ .nav-links{display:none;} nav{padding:1rem 1.4rem;} }
@@ -151,7 +153,7 @@ main { position:relative; z-index:1; }
   margin-bottom: 3rem; color: var(--white);
 }
 .sec-h em { color:var(--accent); font-style:normal; }
-hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
+hr.div { border:none; border-top:1px solid var(--border); margin:0; }
 
 /* Section enter animation */
 .s-enter {
@@ -164,7 +166,7 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
 
 /* Animated section divider line */
 .div-animate {
-  height:1px; background: rgba(50,30,72,0.1);
+  height:1px; background: var(--border);
   position:relative; overflow:hidden; margin:0;
 }
 .div-animate::after {
@@ -265,12 +267,12 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
   text-decoration:none; display:inline-flex; align-items:center; gap:0.4rem;
   transition: all var(--transition); border:none; cursor:none;
 }
-.btn-p { background:var(--accent); color:#321E48; font-weight:700; }
-.btn-p:hover { background:#ff8585; box-shadow:0 0 20px rgba(255,157,157,0.45); }
+.btn-p { background:var(--accent); color:#161E2F; font-weight:700; }
+.btn-p:hover { background:var(--accent-sec); color:var(--white); box-shadow:0 0 20px rgba(181,26,43,0.45); }
 .btn-g { background:transparent; color:var(--white); border:1px solid var(--muted2); }
 .btn-g:hover { border-color:var(--border-h); color:var(--accent); }
 .btn-dl { background:var(--accent-dim); color:var(--accent); border:1px solid var(--border); }
-.btn-dl:hover { background:rgba(255,157,157,0.3); }
+.btn-dl:hover { background:var(--accent-dim); }
 
 /* ── Hero Right: Glass Status Panel ── */
 .hero-right { animation: fadeIn 0.8s 0.15s ease both; }
@@ -280,13 +282,13 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
   border-radius: var(--r);
   backdrop-filter: blur(16px);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(50,30,72,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 .panel-header {
   display:flex; align-items:center; gap:0.6rem; justify-content:space-between;
   padding:0.85rem 1.2rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(255,157,157,0.08);
+  background: rgba(255, 255, 255, 0.02);
 }
 .panel-dots { display:flex; gap:0.4rem; }
 .pd { width:8px; height:8px; border-radius:50%; }
@@ -493,7 +495,7 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
 }
 @keyframes modalIn { from{transform:translateY(24px) scale(0.97);opacity:0;} to{transform:none;opacity:1;} }
 .modal-close { position:absolute; top:1rem; right:1rem; background:var(--accent-dim); border:1px solid var(--border); color:var(--accent); width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:none; font-size:0.85rem; transition:background var(--transition); }
-.modal-close:hover{background:rgba(255,157,157,0.3);}
+.modal-close:hover{background:var(--accent-dim);}
 .modal-img { width:100%; height:200px; object-fit:cover; object-position:top; border-radius:var(--r) var(--r) 0 0; filter:brightness(0.9) saturate(0.95); }
 .modal-body { padding:1.8rem; }
 .modal-org { font-family:'Space Grotesk',sans-serif; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem; font-weight:600; }
@@ -537,7 +539,7 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
 .tp-desc { font-size:0.82rem; color:var(--muted); line-height:1.6; }
 
 .teach-impact { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1rem; margin-top:2rem; }
-.ti { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-sm); padding:1.2rem; text-align:center; transition:border-color var(--transition), background var(--transition); box-shadow: 0 6px 20px rgba(50,30,72,0.04); }
+.ti { background:var(--surface); border:1px solid var(--border); border-radius:var(--r-sm); padding:1.2rem; text-align:center; transition:border-color var(--transition), background var(--transition); box-shadow: 0 6px 20px rgba(179,192,214,0.03); }
 .ti:hover { border-color:var(--border-h); background:var(--accent-dim); }
 .ti-ico { font-size:1.6rem; margin-bottom:0.5rem; display:block; filter:grayscale(0.2); }
 .ti-title { font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:0.88rem; color:var(--white); margin-bottom:0.2rem; }
@@ -616,7 +618,7 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
 #constellation-canvas { position:absolute; inset:0; width:100%; height:100%; }
 .skill-tooltip {
   position:fixed; z-index:200;
-  background:#EEF8CD; border:1px solid var(--border-h);
+  background:var(--surface); border:1px solid var(--border-h);
   border-radius:var(--r-sm); padding:0.5rem 0.9rem;
   font-family:'Space Grotesk',sans-serif; font-size:0.8rem;
   color:var(--white); pointer-events:none; opacity:0;
@@ -671,7 +673,7 @@ hr.div { border:none; border-top:1px solid rgba(50,30,72,0.1); margin:0; }
    FOOTER
 ═══════════════════════════════════════════ */
 footer {
-  border-top:1px solid rgba(50,30,72,0.1); padding:2.5rem 2rem;
+  border-top:1px solid var(--border); padding:2.5rem 2rem;
   text-align:center; color:var(--muted); font-size:0.78rem;
   font-family:'Space Grotesk',sans-serif; letter-spacing:0.04em;
 }
@@ -785,9 +787,9 @@ html { scroll-snap-type: y proximity; }
 
 /* Skill Category Filters */
 .skill-cat-btn {
-  background: rgba(50, 30, 72, 0.08);
-  color: #321E48;
-  border: 1px solid rgba(50, 30, 72, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: 0.35rem 0.95rem;
   font-size: 0.78rem;
@@ -817,15 +819,15 @@ html { scroll-snap-type: y proximity; }
 <div id="pen-cursor">
   <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
     <!-- Pen body -->
-    <rect x="12" y="2" width="5" height="18" rx="2.5" fill="#321E48" stroke="#543970" stroke-width="0.5"/>
+    <rect x="12" y="2" width="5" height="18" rx="2.5" fill="var(--accent)" stroke="var(--border)" stroke-width="0.5"/>
     <!-- Clip/top detail -->
-    <rect x="13.5" y="1" width="2" height="6" rx="1" fill="#543970"/>
+    <rect x="13.5" y="1" width="2" height="6" rx="1" fill="var(--border)"/>
     <!-- Grip section -->
-    <rect x="12" y="14" width="5" height="4" rx="1" fill="#241436"/>
+    <rect x="12" y="14" width="5" height="4" rx="1" fill="var(--bg)"/>
     <!-- Nib/tip -->
-    <polygon points="14.5,20 12.5,22 16.5,22" fill="#321E48"/>
+    <polygon points="14.5,20 12.5,22 16.5,22" fill="var(--accent)"/>
     <!-- Accent tip glow -->
-    <circle cx="14.5" cy="24" r="2" fill="#FF9D9D" opacity="0.9">
+    <circle cx="14.5" cy="24" r="2" fill="var(--accent)" opacity="0.9">
       <animate attributeName="opacity" values="0.9;0.5;0.9" dur="2s" repeatCount="indefinite"/>
       <animate attributeName="r" values="1.5;2.5;1.5" dur="2s" repeatCount="indefinite"/>
     </circle>
