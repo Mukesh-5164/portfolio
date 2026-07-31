@@ -817,6 +817,13 @@ body {
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
+
+.dsa-skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent) !important;
+  box-shadow: 0 10px 30px rgba(255, 165, 134, 0.18) !important;
+}
+
 </style>
 </head>
 <body>
@@ -879,13 +886,13 @@ body {
 <section class="hero zz-section zz-odd" data-zz="1">
   <!-- Left -->
   <div class="hero-left">
-    <div class="hero-tag">Available · Java &amp; IoT Developer</div>
+    <div class="hero-tag">Available · DSA &amp; Java Trainer</div>
     <span class="hero-name">Mukesh V</span>
     <div class="hero-roles">
-      <span class="hero-role" id="hero-role-text">Java Full Stack Developer</span>
+      <span class="hero-role" id="hero-role-text">DSA Trainer</span>
     </div>
     <p class="hero-desc">
-      2 years building real software. Full-stack engineer and IoT developer with a strong foundation in Java, Spring Boot, and embedded systems, building real-world smart devices and systems.
+      Aspiring Data Structures & Algorithms Trainer with strong proficiency in Java, problem solving, and algorithmic thinking. Passionate about simplifying complex concepts, mentoring students, and helping learners develop strong coding fundamentals.
     </p>
     <div class="hero-chips">
       <span class="chip">Java · Spring Boot</span>
@@ -1156,6 +1163,59 @@ body {
       <li>All solutions in Java — directly applicable to technical interview coaching.</li>
     </ul>
   </div>
+
+  <!-- DSA Skills Topic Grid -->
+  <div class="dsa-skills-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-top:3rem;">
+    <!-- Topic 1 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">1. Linear Data Structures</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Topics:</span> Arrays, Strings, Linked Lists, Stacks, Queues
+      </div>
+    </div>
+    <!-- Topic 2 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">2. Hash-Based Data Structures</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Topics:</span> Hash Tables / Hash Maps, Hash Sets
+      </div>
+    </div>
+    <!-- Topic 3 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">3. Hierarchical &amp; Tree Data Structures</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Topics:</span> Binary Trees, Binary Search Trees, Self-Balancing Trees, Heaps / Priority Queues, Tries, &amp; Fenwick
+      </div>
+    </div>
+    <!-- Topic 4 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">4. Graph Data Structures</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Topics:</span> Graphs, Breadth-First Search (BFS), Depth-First Search (DFS)
+      </div>
+    </div>
+    <!-- Topic 5 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">5. Standard Algorithms</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Topics:</span> Linear Search, Binary Search, Sorting (Bubble, Selection, Insertion, Merge, Quick, Heap)
+      </div>
+    </div>
+    <!-- Topic 6 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">6. Problem-Solving Paradigms</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Paradigms:</span> Recursion, Backtracking, Divide and Conquer, Greedy Method, Dynamic Programming (DP)
+      </div>
+    </div>
+    <!-- Topic 7 -->
+    <div class="dsa-skill-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:1.5rem; transition:var(--transition); box-shadow:0 8px 30px rgba(0,0,0,0.2); grid-column: 1 / -1;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:1.1rem; font-weight:700; color:var(--accent); margin-bottom:0.75rem; text-shadow:0 0 10px var(--accent-glow);">7. Coding Interview Patterns</div>
+      <div style="color:var(--muted); font-size:0.88rem; line-height:1.6;">
+        <span style="color:var(--white); font-weight:600;">Patterns:</span> Two Pointers, Sliding Window, Fast and Slow Pointers, Prefix &amp; Suffix Sum, Kadane’s Algorithm, Monotonic Stack &amp; Queue
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="div-animate" data-animate></div>
@@ -1288,7 +1348,7 @@ if (window.matchMedia('(pointer:coarse)').matches) pen.style.display='none';
 // ─────────────────────────────────────────
 // HERO ROLE ROTATION
 // ─────────────────────────────────────────
-const roles = ['Java Full Stack Developer', 'IoT Engineer', 'Software Developer'];
+const roles = ['DSA Trainer', 'Java Full Stack Trainer'];
 const roleEl = document.getElementById('hero-role-text');
 let ri = 0;
 setInterval(() => {
