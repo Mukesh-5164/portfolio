@@ -805,6 +805,18 @@ html { scroll-snap-type: y proximity; }
   box-shadow: 0 4px 14px var(--accent-glow);
   transform: translateY(-1px);
 }
+
+/* ── GLOWING TEXT EFFECTS ── */
+h1, h2, h3, h4, h5, h6, .sec-h, .hero-name {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25), 0 0 8px rgba(255, 165, 134, 0.15);
+}
+.hero-role, .sec-label, .nav-logo, .panel-status, .panel-title, .chip {
+  text-shadow: 0 0 10px var(--accent-glow);
+}
+body {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
 </style>
 </head>
 <body>
@@ -1571,7 +1583,7 @@ function closeModal() {
     ringRadii.forEach(r => {
       ctx.beginPath();
       ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(255, 97, 248, 0.12)';
+      ctx.strokeStyle = 'rgba(255, 165, 134, 0.15)';
       ctx.lineWidth = 1;
       ctx.setLineDash([4, 6]);
       ctx.stroke();
@@ -1612,7 +1624,7 @@ function closeModal() {
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
-        ctx.strokeStyle = `rgba(255, 97, 248, ${op})`;
+        ctx.strokeStyle = `rgba(255, 165, 134, ${op})`;
         ctx.lineWidth = aActive && bActive ? 1.2 : 0.6;
         ctx.stroke();
       });
@@ -1628,8 +1640,8 @@ function closeModal() {
       // Node Glow
       if (n.hovered || (isMatch && currentCategory !== 'all')) {
         const g = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, radius * 3.5);
-        g.addColorStop(0, `rgba(255, 97, 248, ${isMatch ? 0.45 : 0.1})`);
-        g.addColorStop(1, 'rgba(255, 97, 248, 0)');
+        g.addColorStop(0, `rgba(255, 165, 134, ${isMatch ? 0.45 : 0.1})`);
+        g.addColorStop(1, 'rgba(255, 165, 134, 0)');
         ctx.beginPath();
         ctx.arc(n.x, n.y, radius * 3.5, 0, Math.PI * 2);
         ctx.fillStyle = g;
@@ -1639,18 +1651,18 @@ function closeModal() {
       // Outer Ring
       ctx.beginPath();
       ctx.arc(n.x, n.y, radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, 97, 248, ${nodeAlpha})`;
+      ctx.fillStyle = `rgba(255, 165, 134, ${nodeAlpha})`;
       ctx.fill();
       ctx.strokeStyle = `rgba(50, 30, 72, ${isMatch ? 0.6 : 0.15})`;
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
-      // Label text
-      ctx.font = `${n.hovered ? 700 : (isMatch ? 600 : 400)} ${n.hovered ? 12 : 10}px "Space Grotesk", sans-serif`;
-      ctx.fillStyle = `rgba(50, 30, 72, ${isMatch ? 0.95 : 0.35})`;
+      // Label text (Big font size and white color for readability)
+      ctx.font = `${n.hovered ? 700 : (isMatch ? 600 : 500)} ${n.hovered ? 15 : 12.5}px "Space Grotesk", sans-serif`;
+      ctx.fillStyle = `rgba(255, 255, 255, ${isMatch ? 0.95 : 0.4})`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(n.name, n.x, n.y + radius + 12);
+      ctx.fillText(n.name, n.x, n.y + radius + 14);
     });
 
     requestAnimationFrame(draw);
